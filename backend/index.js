@@ -4,7 +4,13 @@ const express = require('express')
 var bodyParser = require('body-parser')
 
 const { Client } = require('pg')
-const client = new Client()
+const client = new Client({
+    user: 'postgres',
+    host: 'db',
+    database: 'postgres',
+    password: 'pgspass',
+    port: 5432,
+})
 
 client.connect()
 

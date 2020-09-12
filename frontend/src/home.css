@@ -24,7 +24,7 @@ body {
 .cont {
     width: 27%;
     margin: 1em;
-    height: 140px;
+    height: fit-content;
     background-color: #fff;
     border-radius: 5px;
     padding: 1em;

@@ -6,7 +6,7 @@ import './home.css'
 
 const Home = ({match}) => {
     
-    let backend = 'http://localhost:8000'
+    let backend = 'http://localhost'
     
     const [data, setData] = useState(null)
     const [error, setError] = useState(false)
@@ -66,7 +66,7 @@ const Home = ({match}) => {
     if (data !== null) {
         avpos = data.map(d => {
             return <div className={'cont'} key={d.date + d.time}>
-                <h5>{d.teamName}</h5>
+                <h5>{d.name}</h5>
                 <p>
                     {d.date}: {d.time}
                 </p>
