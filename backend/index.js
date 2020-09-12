@@ -24,6 +24,11 @@ var corsOptions = {
 }
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
+
+app.get('/api', async (req, res) => {
+    res.send('Hello')
+})
+
 app.get('/api/db', async (req, res) => {
     let teamId = ''
     try {
