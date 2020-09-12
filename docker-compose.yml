@@ -22,8 +22,9 @@ services:
             PGHOST: db
             PGUSER: postgres
             PGDATABASE: ntnuib
-            PGPASSWORD: pgspass
-            PGPORT: 5432           
+            PGPASSWORD: pgspass 
+        ports:
+            - 8000:8000
 
     db: 
         image: postgres:latest
