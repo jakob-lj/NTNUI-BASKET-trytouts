@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTNUI Basket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .wrapper {
+            background: #eee;
+            box-shadow: 0px 2px 4px #00000030;
+            width: 70%;
+            margin: auto;
+            margin-top: 4em;
+            padding: 1em;
+            border-radius: 5px;;
+        }
+
+        .wrapper h1, .wrapper h3, .wrapper p {
+            text-align: center;
+        }
+
+        #error {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Velkommen til tryouts hos NTNUI Basket</h1>
+
+    </div>
+    <div class="wrapper" id="error">
+        <h2>Det skjedde en feil? Kan du sende en mail til <a href="mailto: jakob.johannessen@ntnui.no">jakob.johannessen@ntnui.no</a> </h2>
+
+    </div>
+    <div class="wrapper" id="content">
+        <p>Vi tar deg straks til siden hvor du kan velge når du vil på tryouts!</p>
+        <p>Loading...</p>
+    </div>
+
+    <div class="wrapper">
+        <p>Made in a rush by <a href="https://ntnui.no/basket">NTNUI Basket</a></p>
+
+    </div>
+
+        <script>
+            
+            window.onload = (e) => {
+
+                try {
+                    let url = window.location.href.split('?')[1].split('=')[1]
+                    console.log(url)
+    
+                    fetch('http://localhost:8000/api/').then(r => {
+                        console.log(r)
+                    })
+
+                } catch (e) {
+                    console.log('handle')
+                    document.getElementById('error').display = 'block'
+                    document.getElementById('content').display = 'none'
+
+                }
+            }
+        </script>
+
+    </body>
+</html>
