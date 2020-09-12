@@ -6,7 +6,7 @@ import './home.css'
 
 const Home = ({match}) => {
     
-    let backend = 'http://ntnui-basket-tryouts.jakoblj.xyz'
+    let backend = 'https://ntnui-basket-tryouts.jakoblj.xyz'
     
     const [data, setData] = useState(null)
     const [error, setError] = useState(false)
