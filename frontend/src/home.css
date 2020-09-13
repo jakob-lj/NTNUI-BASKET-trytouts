@@ -46,6 +46,7 @@ input {
     padding: 1em;
     border: 2px solid #1C3144;
     color: #1C3144;
+    width: -webkit-fill-available;
 }
 
 @media screen and (max-width: 924px) {
