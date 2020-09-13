@@ -46,7 +46,7 @@ app.get('/api/db', async (req, res) => {
 app.get('/api/team/:teamId/', async (req, res) => {
     let teamId = req.params.teamId
     try {
-        const r = await client.query('select t.id, t.time, t.date, team.name, (select availablespots from times where times.id = t.id)-count(j.id) as count from times as t inner join teams as team on team.id = t.teamid left join joining as j on t.id = j.tid where t.teamid = $1::uuid group by t.id, t.time, team.name, t.date', [teamId])
+        const r = await client.query('select t.id, t.time, t.date, team.name, (select availablespots from times where times.id = t.id)-count(j.id) as count from times as t inner join teams as team on team.id = t.teamid left join joining as j on t.id = j.tid where t.teamid = $1::uuid group by t.id, t.time, team.name, t.date order by time', [teamId])
         res.send(r.rows)
 
     } catch (e) {
