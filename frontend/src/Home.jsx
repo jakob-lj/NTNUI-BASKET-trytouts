@@ -38,7 +38,7 @@ const Home = ({match}) => {
     
     useEffect(() => {
         try {
-            let teamId = window.location.href.split('?')[1].split('=')[1]        
+            let teamId = window.location.href.split('?')[1].split('=')[1].split("&")[0]
             if (teamId === undefined) {
                 throw 'Undefined team'
             }
